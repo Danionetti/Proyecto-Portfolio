@@ -1,0 +1,243 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+.header_socialmedia {
+  display: flex;
+  gap: 1.8em;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.headerimages {
+  position: relative;
+  width: 100%;
+}
+.adam {
+  width: 10.8em;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  margin-top: 1em;
+  margin-left: 8em;
+}
+
+.elipse {
+  position: absolute;
+  left: -30%;
+  z-index: 2;
+}
+.circle {
+  position: absolute;
+  left: 85%;
+  top: 25%;
+}
+.header_description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1em;
+  margin-left: 0.1em;
+}
+.header_title {
+  font-size: 2.7em;
+  font-weight: bold;
+  align-content: center;
+
+  line-height: 1.1em;
+}
+.indent {
+  margin-left: 0.2em;
+}
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 5px;
+  text-decoration-color: $primary-color;
+}
+.header_subtitle {
+  font-size: 1.1em;
+  font-weight: 450;
+  line-height: 1.3em;
+  color: $terciary-color;
+  padding-top: 1.7em;
+  padding-left: 0.5em;
+}
+.indent2 {
+  margin-left: 6em;
+}
+.contact {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: $cuaternary-color;
+  letter-spacing: 0.1em;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: $primary-color;
+  margin-top: 1.5em;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.header_experience {
+  width: 343px;
+  margin-top: 5em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border-top: 2px solid $rectangle-color;
+  border-bottom: 2px solid $rectangle-color;
+  border-left: none;
+  border-right: none;
+}
+.experience_title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 2.5em;
+}
+.experience_subtitle {
+  font-size: 1em;
+  font-weight: 450;
+  color: $terciary-color;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.experience_image {
+  margin-left: 7em;
+  margin-top: -3em;
+}
+
+/*Aqui empieza la vista de Tablet*/
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+  }
+
+  .tablet_container {
+    display: flex;
+    width: 100%;
+    gap: 10em;
+    & > h1 {
+      margin-left: 2em;
+    }
+    & > .header_socialmedia img {
+      margin-right: 2em;
+    }
+  }
+  .adam {
+    width: 18.7em;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.8;
+    margin: 0;
+  }
+  .circle {
+    position: absolute;
+    top: 16em;
+    left: 44em;
+  }
+  .header_description {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20em;
+    width: 28em;
+    height: 28em;
+    & > h1 {
+      font-size: 4.5em;
+      line-height: 1em;
+    }
+  }
+  .indent {
+    margin-left: 0em;
+  }
+  .header_subtitle {
+    font-size: 1.2em;
+    & > .indent2 {
+      margin-left: 0em;
+    }
+  }
+  .contact {
+    margin-right: 16em;
+  }
+
+  .header_experience {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em 4em;
+    padding: 2em 0;
+    border-bottom: none;
+  }
+
+  .experience_item {
+    display: flex;
+    flex-direction: column;
+
+    & > h1 {
+      font-size: 2.9em;
+    }
+    & > h2 {
+      font-size: 1.2em;
+    }
+  }
+
+  .experience_image {
+    margin-left: 20em;
+    margin-bottom: 2em;
+    width: 80%;
+  }
+}
+/*Aqui empieza la vista de Desktop*/
+@media (min-width: 1440px) {
+  .tablet_container {
+    gap: 50em;
+    & > .header_socialmedia {
+      margin-top: 1em;
+    }
+  }
+  .adam {
+    position: absolute;
+    width: 25em;
+  }
+  .circle {
+    position: absolute;
+    left: 70%;
+  }
+  .elipse {
+    position: absolute;
+    left: -6%;
+    top: 0;
+  }
+  .header_description {
+    margin-right: 30em;
+    width: 44em;
+    margin-top: 4em;
+  }
+  .header_subtitle {
+    margin-left: 1em;
+  }
+  .contact {
+    margin-right: 28em;
+  }
+  .header_experience {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3em 4em;
+    padding: 2em 0;
+    border-bottom: none;
+  }
+}

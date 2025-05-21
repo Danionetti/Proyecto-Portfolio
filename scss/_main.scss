@@ -1,0 +1,146 @@
+.main_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.main_contact {
+  display: inline-block;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: $cuaternary-color;
+  letter-spacing: 0.1em;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: $primary-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.main_container {
+  padding: 2.5em 1em;
+}
+
+.projects {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.project {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.projects_title {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-top: 1.2em;
+}
+.projects_tech {
+  display: flex;
+  gap: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: $rectangle-color;
+}
+.projects_links {
+  display: flex;
+  gap: 1.5em;
+  padding-bottom: 2.2em;
+
+  a {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: $cuaternary-color;
+    text-decoration-color: $primary-color;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 2.5px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+/*Aqui empieza la vista de tablet*/
+@media (min-width: 768px) {
+  .main_title {
+    font-size: 4.5em;
+  }
+
+  .main_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    padding: 2em;
+    justify-content: center;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: flex-start;
+  }
+
+  .projects img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+  }
+
+  .projects_links {
+    display: flex;
+    gap: 2em;
+  }
+}
+/*Aqui empieza la vista de desktop*/
+@media (min-width: 1440px) {
+  .main_top {
+    margin-left: 12em;
+    margin-right: 12em;
+  }
+
+  .main_container {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
+  .projects {
+    position: relative;
+  }
+
+  .projects_links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .projects:hover .projects_links {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .projects:hover .project {
+    opacity: 0.2;
+    transition: opacity 0.3s ease;
+  }
+  .footer_socialmedia_icons a:hover img {
+    filter: invert(71%) sepia(39%) saturate(549%) hue-rotate(110deg)
+      brightness(93%) contrast(90%);
+  }
+}
