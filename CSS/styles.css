@@ -390,6 +390,9 @@ body {
     pointer-events: none;
     transition: opacity 0.3s ease;
   }
+  .projects_links a {
+    text-underline-offset: 0;
+  }
   .projects:hover .projects_links {
     opacity: 1;
     pointer-events: auto;
